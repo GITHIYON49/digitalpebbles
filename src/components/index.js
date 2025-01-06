@@ -6,6 +6,7 @@ import Banner from "./banner/Banner";
 import Carousel from "./carousel/Carousel";
 import ServicesSection from "./servicesSection/ServicesSection";
 import ServiceDetail from "./serviceDetail/ServiceDetail";
+import ContactForm from "./contactForm/ContactForm";
 
 
-export {Navbar,Footer,WhyUsSection,BlogCard,Banner,Carousel,ServicesSection,ServiceDetail};
+export {Navbar,Footer,WhyUsSection,BlogCard,Banner,Carousel,ServicesSection,ServiceDetail,ContactForm};

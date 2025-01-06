@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner } from '../../components';
+import { Banner ,ContactForm} from '../../components';
 import { contactbanner } from '../../assets/images';
 
 const bannerDescription = {
@@ -11,6 +11,7 @@ const bannerDescription = {
 function Contact() {
   return <>
   <Banner bannerDescription={bannerDescription}/>
+  <ContactForm/>
   </>
 }
 

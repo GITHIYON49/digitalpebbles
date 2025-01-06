@@ -7,7 +7,7 @@ function ServicesSection() {
   return (
     <>
       <section className="w-full flex flex-col items-center justify-center gap-10 my-10 ">
-        <h3 className="text-3xl text-slate-500 font-semibold uppercase text-center">
+        <h3 className="text-3xl font-arvo font-semibold uppercase text-center">
           our Services
         </h3>
         <div className="md:w-4/5  flex flex-wrap items-center justify-center gap-10 md:gap-20">

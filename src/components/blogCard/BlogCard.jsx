@@ -3,11 +3,11 @@ import React from "react";
 const BlogCard = () => {
   return (
     <>
-      <section className="w-full flex items-center justify-center mt-10 py-20 bg-gray-50">
+      <section className="w-full flex items-center justify-center mt-10 py-20">
         
         <div className="w-4/5 flex flex-col lg:flex-row flex-wrap items-center justify-center h-full">
           <div className="w-full lg:w-1/3 lg:min-h-72 lg:invisible"></div>
-          <div className="bg-white w-full h-auto lg:w-1/3 lg:min-h-72 flex flex-col items-start justify-end p-5 gap-4">
+          <div className="bg-white w-full h-auto lg:w-1/3 lg:min-h-72 flex flex-col shadow-xl items-start justify-end p-5 gap-4">
             <h6 className="text-xl md:text-2xl font-bold text-gray-500 capitalize">
             Holistic<br /> <span>Approach</span>
             </h6>
@@ -26,7 +26,7 @@ const BlogCard = () => {
             </p>
           </div>
 
-          <div className="bg-white w-full lg:w-1/3 lg:min-h-72 flex flex-col items-start justify-end p-5 gap-4 text-white">
+          <div className="bg-white w-full lg:w-1/3 lg:min-h-72 flex flex-col items-start shadow-xl justify-end p-5 gap-4 text-white">
             <h6 className="text-xl md:text-2xl font-bold text-gray-500 capitalize">
             Cutting-Edge<br /> <span>Expertise</span>
             </h6>
@@ -42,7 +42,7 @@ const BlogCard = () => {
             Our solutions are built with scalability and security in mind, so you can confidently grow without missing a beat—or risking your data.
             </p>
           </div>
-          <div className="bg-white w-full lg:w-1/3 lg:min-h-72 flex flex-col items-start justify-end p-5 gap-4">
+          <div className="bg-white w-full lg:w-1/3 lg:min-h-72 flex flex-col shadow-xl items-start justify-end p-5 gap-4">
             <h6 className="text-xl md:text-2xl font-bold text-gray-500 capitalize">
               Training &  <br /> <span>Empowerment</span>
             </h6>

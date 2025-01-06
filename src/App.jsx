@@ -7,7 +7,7 @@ function App() {
 
       return <>
       <Navbar/>
-      {/* <Routes>
+      <Routes>
             <Route element={<Home/>} path='/'/>
             <Route element={<About/>} path='/about'/>
             <Route element={<Service/>} path='/services'/>
@@ -17,8 +17,8 @@ function App() {
             <Route element={<AmazonMarketing/>} path='/services/gagets_amazon_marketing'/>
             <Route element={<TrainingDevelopment/>} path='/services/trainingdevelopment'/>
             <Route element={<Contact/>} path='/contact'/>
-      </Routes> */}
-      {/* <Footer/> */}
+      </Routes>
+      <Footer/>
       </>
 }
 
