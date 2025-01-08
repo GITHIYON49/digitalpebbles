@@ -14,7 +14,7 @@ function Navbar() {
     <>
       <header className="w-full h-auto  bg-white z-50 shadow-lg sticky top-0">
         <nav className="w-full flex items-center justify-between lg:justify-around py-3 px-5 relative">
-          <div className="w-60 h-32 cursor-pointer">
+          <div className="w-48 h-auto cursor-pointer">
             <Link to='/'>
             <img
               src={digitalpebbles}
@@ -75,7 +75,7 @@ function Navbar() {
               </button>
             </div>
           </div>
-          <ul className={`absolute top-36 flex flex-col ${isShowMenu ? "opacity-100" : "opacity-0"} ease-in-out transition-all duration-300  bg-gray-100 left-0 right-0 rounded-md`}>
+          <ul className={`absolute top-36 flex flex-col ${isShowMenu ? "block" : "hidden"} ease-in-out transition-all duration-300  bg-gray-100 left-0 right-0 rounded-md`}>
             <li><Link className="inline-block w-full py-3 px-5 rounded-md capitalize hover:bg-cyan-500 hover:text-white transition-all ease-in-out cursor-pointer duration-300" to='/'>Home</Link></li>
             <li><Link className="inline-block w-full py-3 px-5 rounded-md capitalize hover:bg-cyan-500 hover:text-white transition-all ease-in-out cursor-pointer duration-300" to='/about'>About </Link></li>
             <li><Link className="inline-block w-full py-3 px-5 rounded-md capitalize hover:bg-cyan-500 hover:text-white transition-all ease-in-out cursor-pointer duration-300" to='/services'>Services</Link></li>

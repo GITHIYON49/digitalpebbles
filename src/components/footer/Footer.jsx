@@ -7,7 +7,7 @@ function Footer() {
     <footer className='w-full flex flex-col items-center justify-center gap-7'>
         <div className='w-11/12 flex flex-col md:flex-row items-center justify-between gap-7 mx-auto'>
         <div className='md:w-1/2 flex flex-col items-center md:items-start justify-center gap-1'>
-        <div className='w-60 h-32 flex items-center rounded-sm'>
+        <div className='w-48 h-auto flex items-center rounded-sm'>
         <img src={digitalpebbles} alt="digitalpebbles_logo" className='w-full h-full object-cover text-white' />
         
         </div>
