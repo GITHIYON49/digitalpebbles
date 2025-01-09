@@ -5,14 +5,20 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 function ContactFormCard({ serviceId, templateId, publicKey }) {
-
   const schema = z.object({
-    from_firstName: z.string(),
-    from_lastName: z.string(),
-    from_email: z.string().email(),
-    from_phoneNumber: z.string().min(10).max(15),
-    from_message: z.string().min(10),
-    to_name:z.string()
+    from_firstName: z.string().nonempty("Please enter your first name"),
+    from_lastName: z.string().nonempty("Please enter your last name"),
+    from_email: z
+      .string()
+      .nonempty("Please enter your email address")
+      .email("You must provide a valid email address"),
+    from_phoneNumber: z
+      .string()
+      .nonempty("Please enter your phone number.")
+      .min(10, "The phone number must have exactly 10 characters.")
+      .max(15),
+    from_message: z.string().nonempty("Please enter your message").min(10),
+    to_name: z.string(),
   });
 
   const {
@@ -21,15 +27,14 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
     reset,
     formState: { errors },
   } = useForm({
-    defaultValues:{
-      to_name:"Digital Pebbles"
-
+    defaultValues: {
+      to_name: "Digital Pebbles",
     },
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data) => {
-    console.log("hello",data);
+    console.log("hello", data);
     try {
       const response = await emailjs.send(
         serviceId,
@@ -154,7 +159,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="col-span-2">
             <button
               type="submit"
-              className="bg-orange-500 py-2 px-5 text-lg capitalize text-white rounded-sm cursor-pointer"
+              className="bg-orange-500 py-2 px-5 text-lg capitalize text-white rounded-3xl cursor-pointer"
             >
               Send Message
             </button>
