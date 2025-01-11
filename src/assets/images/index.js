@@ -1,4 +1,5 @@
 import digitalpebbles from "../images/digitalpebbles.webp";
+import digitalpebblesIcon from "../images/digitalpebbels_icon.svg"
 import whyus from "../images/why1_enhanced.webp";
 import aboutbanner from "../images/slider1.webp";
 import aboutus from "../images/about1.webp";

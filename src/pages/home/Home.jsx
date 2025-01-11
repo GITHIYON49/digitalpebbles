@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react"
 import { WhyUsSection, BlogCard, Carousel } from "../../components";
 import { aboutus, whyus } from "../../assets/images";
 const strings = [
@@ -22,9 +23,21 @@ function Home() {
   return (
     <>
       <Carousel />
-      <div className="w-full bg-cyan-200 py-2 px-1 text-xs lg:text-base font-semibold text-center text-gray-700  uppercase">
-        Digital Pebbles – Turning business visions into digital realities.
-      </div>
+      <div
+  className="w-full bg-cyan-200 py-2 px-1 text-xs lg:text-base font-semibold text-gray-700 uppercase overflow-hidden"
+>
+  <motion.span
+    className="w-full flex flex-shrink-0"
+    initial={{ x: "100%" }} // Start from the right
+    animate={{ x: "-100%" }} // Move to the left
+    transition={{ duration:20, repeat: Infinity, ease: "linear" }}
+    style={{ whiteSpace: "nowrap" }} // Prevent text wrapping
+  >
+    Digital Pebbles – Turning business visions into digital realities.
+  </motion.span>
+</div>
+
+
       <div className="flex flex-col gap-5 sm:gap-10">
         <WhyUsSection
           strings={strings[1]}
