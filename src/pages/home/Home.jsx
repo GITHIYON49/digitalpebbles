@@ -28,10 +28,10 @@ function Home() {
 >
   <motion.span
     className="w-full flex flex-shrink-0"
-    initial={{ x: "100%" }} // Start from the right
-    animate={{ x: "-100%" }} // Move to the left
+    initial={{ x: "100%" }} 
+    animate={{ x: "-100%" }}
     transition={{ duration:20, repeat: Infinity, ease: "linear" }}
-    style={{ whiteSpace: "nowrap" }} // Prevent text wrapping
+    style={{ whiteSpace: "nowrap" }}
   >
     Digital Pebbles – Turning business visions into digital realities.
   </motion.span>

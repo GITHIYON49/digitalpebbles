@@ -25,7 +25,7 @@ function DesktopMenu({ menu }) {
       transition: {
         duration: 0.5,
       },
-      display: "none",
+      display: "hidden",
     },
   };
 
@@ -46,21 +46,29 @@ function DesktopMenu({ menu }) {
         )}
       </Link>
       {hasSubMenu && (
-        <span className="inline-block top-10 cursor-pointer absolute opacity-0 inset-0 h-40" />
+        <span
+          className={`${
+            isHover ? "inline-block" : "hidden"
+          } top-10 w-full cursor-pointer opacity-0 absolute h-10`}
+        />
       )}
       {hasSubMenu && (
         <motion.div
           initial="exit"
           animate={isHover ? "enter" : "exit"}
           variants={subMenuAnimate}
-          className="absolute top-20 bg-white w-52 p-3 rounded-lg"
+          className={`${
+            isHover ? "block" : "hidden"
+          } absolute top-20 bg-white w-52 p-3 rounded-lg`}
         >
           <div>
             {menu?.subMenu?.map((submenu, i) => {
               return (
                 <div key={i}>
                   <Link
-                    className="inline-block p-3 hover:bg-cyan-500 hover:text-white rounded-lg transition-all duration-100"
+                    className={`${
+                      isHover ? "inline-block" : "hidden"
+                    } p-3 hover:bg-cyan-500 hover:text-white rounded-lg transition-all duration-100`}
                     to={submenu.path}
                   >
                     {submenu.name}

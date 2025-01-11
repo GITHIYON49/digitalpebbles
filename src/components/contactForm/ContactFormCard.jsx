@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { toast, Bounce } from "react-toastify";
 
 function ContactFormCard({ serviceId, templateId, publicKey }) {
   const schema = z.object({
@@ -34,18 +35,32 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
   });
 
   const onSubmit = async (data) => {
-    console.log("hello", data);
     try {
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        data,
-        publicKey
-      );
-      console.log("Email sent successfully:", response);
+      await emailjs.send(serviceId, templateId, data, publicKey);
+      toast.success("Thank you! Your message has been sent successfully.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       reset();
     } catch (error) {
-      console.log("Error sending email:", error);
+      toast.error("Failed to send your message. Please try again later.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     }
   };
   return (
