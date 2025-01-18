@@ -19,7 +19,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
       .min(10, "The phone number must have exactly 10 characters.")
       .max(15),
     from_message: z.string().nonempty("Please enter your message").min(10),
-    to_name: z.string(),
+    to_name: z.string().optional(),
   });
 
   const {
@@ -73,9 +73,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="w-full">
             <label htmlFor="first_name">First Name</label> <br />
             <input
-              {...register("from_firstName", {
-                required: "First name is required",
-              })}
+              {...register("from_firstName")}
               id="first_name"
               type="text"
               placeholder="Enter your first name"
@@ -91,9 +89,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="w-full">
             <label htmlFor="last_name">Last Name</label> <br />
             <input
-              {...register("from_lastName", {
-                required: "Last name is required",
-              })}
+              {...register("from_lastName")}
               id="last_name"
               type="text"
               placeholder="Enter your last name"
@@ -125,7 +121,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="w-full">
             <label htmlFor="email">Email</label> <br />
             <input
-              {...register("from_email", { required: "Email is required" })}
+              {...register("from_email")}
               id="email"
               type="text"
               placeholder="Enter your email address"
@@ -141,9 +137,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="w-full">
             <label htmlFor="phoneNumber">Phone Number</label> <br />
             <input
-              {...register("from_phoneNumber", {
-                required: "Phone number is required",
-              })}
+              {...register("from_phoneNumber")}
               id="phoneNumber"
               type="text"
               placeholder="Enter your phone number"
@@ -160,7 +154,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
             <label htmlFor="message">Message</label> <br />
             <textarea
               id="message"
-              {...register("from_message", { required: "Message is required" })}
+              {...register("from_message")}
               placeholder="Enter your message"
               className="w-full min-h-52 resize-none p-3 rounded-sm outline-none border-[1px] border-gray-300 focus:border-cyan-400 mt-1"
             ></textarea>
@@ -174,7 +168,7 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           <div className="col-span-2">
             <button
               type="submit"
-              className="bg-orange-500 py-2 px-5 text-lg capitalize text-white rounded-3xl cursor-pointer"
+              className="bg-orange-500 hover:bg-orange-400 py-2 px-5 text-lg capitalize text-white rounded-3xl cursor-pointe z-[999]"
             >
               Send Message
             </button>

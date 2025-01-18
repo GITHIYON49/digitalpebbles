@@ -12,7 +12,7 @@ function ContactCard() {
               Address
             </h6>
             <span className="text-sm capitalize font-light">
-              No/29 viman nagar pozhichalur chennai-600074
+              No.29, viman nagar, pozhichalur, chennai-600074
             </span>
           </div>
         </div>

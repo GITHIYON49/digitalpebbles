@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Reveal from "../reveal/Reveal";
+
 function ServiceDetail({ servicesContent }) {
   const navigation = useNavigate();
   return (

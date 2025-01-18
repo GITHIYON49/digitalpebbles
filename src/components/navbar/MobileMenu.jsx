@@ -3,11 +3,12 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router";
 import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
-import { animate } from "motion";
+import { useNavigate } from "react-router";
 
 function MobileMenu({ menuList }) {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
+  const navigate = useNavigate();
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -24,6 +25,38 @@ function MobileMenu({ menuList }) {
     },
   };
 
+  const handleClick = async (path, isClicked, index, hasSubMenu) => {
+    // Toggle animation state first
+    if (hasSubMenu) {
+      setIsOpen(true);
+    } else {
+      setIsOpen((prev) => !prev);
+    }
+
+    setClicked((prev) => (isClicked ? null : index));
+
+    // Delay navigation slightly to let the animation finish
+    if (path) {
+      setTimeout(async () => {
+        await navigate(path);
+      }, 300); // Match this with the animation duration
+    }
+  };
+
+  const submenuNavigate = async (path) => {
+    setIsOpen((prev) => !prev);
+
+    if (path) {
+      setTimeout(async () => {
+        try {
+          await navigate(path);
+        } catch (error) {
+          console.error("Navigation failed:", error);
+        }
+      }, 300); // Match this with the animation duration
+    }
+  };
+
   return (
     <div>
       <button onClick={toggleDrawer} className="relative z-[999]">
@@ -35,7 +68,7 @@ function MobileMenu({ menuList }) {
       </button>
       <div
         className={`fixed top-20 sm:top-24 right-0 left-0 overflow-y-auto h-full ${
-          isOpen ? "bg-gray-200" : "bg-transparent"
+          isOpen ? "bg-gray-200" : "hidden"
         } p-6`}
       >
         <ul>
@@ -47,11 +80,16 @@ function MobileMenu({ menuList }) {
                 key={menu.name}
                 initial={{ x: "-100%" }}
                 animate={{ x: isOpen ? "0%" : "-100%" }}
+                transition={{
+                  duration: 0.3, // Slightly increased duration for smoother transitions
+                  ease: "easeOut",
+                }}
               >
-                <Link
-                  to={menu.path}
-                  onClick={() => setClicked(isClicked ? null : i)}
-                  className="flex items-center justify-between p-4 hover:bg-cyan-500 hover:text-white cursor-pointer rounded-md relative"
+                <button
+                  onClick={() =>
+                    handleClick(menu.path, isClicked, i, hasSubMenu)
+                  }
+                  className="w-full flex items-center justify-between p-4 hover:bg-cyan-500 hover:text-white cursor-pointer rounded-md relative"
                 >
                   {menu?.name}
                   {hasSubMenu && (
@@ -61,7 +99,7 @@ function MobileMenu({ menuList }) {
                       }`}
                     />
                   )}
-                </Link>
+                </button>
                 {hasSubMenu && (
                   <motion.ul
                     initial="exit"
@@ -72,12 +110,12 @@ function MobileMenu({ menuList }) {
                     {menu?.subMenu?.map((submenu, i) => {
                       return (
                         <li key={submenu.name}>
-                          <Link
-                            to={submenu.path}
-                            className="inline-block p-3 hover:bg-white/50 w-full rounded-md"
+                          <button
+                            onClick={() => submenuNavigate(submenu.path)}
+                            className="inline-block text-start p-3 hover:bg-white/50 w-full rounded-md"
                           >
                             {submenu.name}
-                          </Link>
+                          </button>
                         </li>
                       );
                     })}

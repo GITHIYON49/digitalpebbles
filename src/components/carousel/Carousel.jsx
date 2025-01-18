@@ -10,7 +10,7 @@ function Carousel() {
       setCurrent((prev) => (prev === CarouselData.length - 1 ? 0 : prev + 1));
     }, 3000);
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    return () => clearInterval(interval);
   }, [CarouselData.length]);
 
   const handleNextSlide = () => {

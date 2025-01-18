@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "motion/react";
-import { easeIn } from "motion";
 
 function Reveal({ children }) {
   const ref = useRef(null);

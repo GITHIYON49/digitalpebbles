@@ -23,7 +23,7 @@ function Home() {
   return (
     <>
       <Carousel />
-      <div className="w-full bg-cyan-200 py-2 px-1 text-xs lg:text-base font-semibold text-gray-700 uppercase overflow-hidden">
+      <div className="w-full bg-cyan-200 py-2 px-1 text-xs lg:text-base font-semibold text-gray-700 capitalize overflow-hidden">
         <motion.span
           className="w-full flex flex-shrink-0"
           initial={{ x: "100%" }}

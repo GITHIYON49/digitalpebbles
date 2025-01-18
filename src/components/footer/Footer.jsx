@@ -33,7 +33,7 @@ function Footer() {
                       <span>Mail: </span>digitalpebblespvtltd@gmail.com
                     </li>
                     <li className="capitalize">
-                      <span>Address: </span>No-29, viman nagar, pozhichalur,{" "}
+                      <span>Address: </span>No.29, viman nagar, pozhichalur,{" "}
                       <br /> chennai-600074
                     </li>
                   </ul>
@@ -79,13 +79,3 @@ function Footer() {
 }
 
 export default Footer;
-
-{
-  /* <h2 className="text-4xl text-cyan-600 font-bold font-pridi uppercase text-center">soti</h2>
-            <p className='md:w-3/5 lg:w-1/2 text-sm capitalize text-center md:text-start'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste beatae similique quas aut! Delectus repellendus error hic, ipsa ex molestias.</p>
-            <div className='flex items-center justify-start gap-5'>
-                <span className='inline-block'><img src={linkedin} alt="linkedin_image" className='w-10 h-10 object-cover' /></span>
-                <span className='inline-block'><img src={instagram} alt="linkedin_image" className='w-10 h-10 object-cover' /></span>
-                <span className='inline-block'><img src={youtube_img} alt="linkedin_image" className='w-10 h-10 object-cover' /></span>
-            </div> */
-}

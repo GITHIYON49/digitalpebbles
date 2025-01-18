@@ -18,14 +18,14 @@ function WhyUsSection({ className, strings }) {
               />
             </div>
             <div className="w-full lg:w-1/2  flex flex-col items-center sm:items-start justify-between gap-3">
-              <h2 className="text-lg sm:text-xl lg:text-2xl text-center sm:text-start uppercase font-bold  relative after:content-[''] after:w-full  sm:after:w-2/5 hover:after:w-full hover:after:transition-all hover:after:ease-in-out hover:after:duration-300 cursor-default after:h-1 after:bg-cyan-500 after:block after:mt-2">
+              <h2 className="text-lg sm:text-xl lg:text-2xl text-start sm:text-start uppercase font-bold  relative after:content-[''] after:w-full  sm:after:w-2/5 hover:after:w-full hover:after:transition-all hover:after:ease-in-out hover:after:duration-300 cursor-default after:h-1 after:bg-cyan-500 after:block after:mt-2">
                 {strings.heading}
               </h2>
-              <h4 className="text-base sm:text-lg lg:text-xl capitalize text-center sm:text-start font-semibold text-slate-500">
+              <h4 className="text-base sm:text-lg lg:text-xl capitalize text-start sm:text-start font-semibold text-slate-500">
                 {strings.title}
               </h4>
               <p
-                className={`text-sm lg:text-base    leading-7 text-center sm:text-start `}
+                className={`text-sm lg:text-base    leading-7 text-start sm:text-start `}
               >
                 {strings.description}
               </p>
