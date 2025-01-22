@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Reveal from "../reveal/Reveal";
+import { motion } from "motion/react";
 
 function ServiceDetail({ servicesContent }) {
   const navigation = useNavigate();
@@ -23,13 +24,18 @@ function ServiceDetail({ servicesContent }) {
               <p className="text-slate-700 text-sm md:text-base">
                 {servicesContent.description}
               </p>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ rotate: "2.5deg", scale: 0.95 }}
+                transition={{
+                  duration: 0.125,
+                }}
                 className="bg-cyan-500 hover:bg-cyan-400 font-semibold rounded-3xl text-white capitalize w-32 py-2 text-sm sm:text-base"
                 onClick={() => navigation("/contact")}
               >
                 {" "}
                 contact{" "}
-              </button>
+              </motion.button>
             </div>
           </div>
         </section>

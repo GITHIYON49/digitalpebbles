@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast, Bounce } from "react-toastify";
+import { motion } from "motion/react";
 
 function ContactFormCard({ serviceId, templateId, publicKey }) {
   const schema = z.object({
@@ -166,12 +167,17 @@ function ContactFormCard({ serviceId, templateId, publicKey }) {
           </div>
 
           <div className="col-span-2">
-            <button
+            <motion.button
+            whileHover={{scale:1.05}}
+            whileTap={{rotate:"2.5deg",scale:0.95}}
+            transition={{
+              duration:0.125
+            }}
               type="submit"
               className="bg-orange-500 hover:bg-orange-400 py-2 px-5 text-lg capitalize text-white rounded-3xl cursor-pointe z-[999]"
             >
               Send Message
-            </button>
+            </motion.button>
           </div>
         </form>
       </div>
