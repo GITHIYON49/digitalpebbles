@@ -33,9 +33,7 @@ function ContactCard() {
             <h6 className="text-lg text-blue-900 font-semibold font-roboto">
               Email US
             </h6>
-            <span className="text-sm font-light">
-              digitalpebblespvtltd@gmail.com
-            </span>
+            <span className="text-sm font-light">help@digitalpebbles.in</span>
           </div>
         </div>
         <div className="flex items-center gap-5">

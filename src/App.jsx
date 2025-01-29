@@ -1,4 +1,5 @@
-import { Navbar, Footer } from "./components";
+import { useEffect } from "react";
+import { Footer, Navbar, ScrollToTop } from "./components";
 import {
   Home,
   About,
@@ -15,6 +16,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

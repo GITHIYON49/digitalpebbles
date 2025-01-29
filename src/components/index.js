@@ -7,6 +7,7 @@ import Carousel from "./carousel/Carousel";
 import ServiceDetail from "./serviceDetail/ServiceDetail";
 import ContactForm from "./contactForm/ContactForm";
 import Reveal from "./reveal/Reveal";
+import ScrollToTop from "./scrollToTop/ScrollToTop";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   ServiceDetail,
   ContactForm,
   Reveal,
+  ScrollToTop,
 };
